@@ -3,7 +3,13 @@ extends _layout
 block content
   .home
     .cards
-      .card
-        img
-        .h2 title
+      for i in new Array(24)
+        .cards-col
+          .card
+            img(src=static_url('images/content/1.png'))
+            .card-info
+              h2 Title this a large large title
+              p Lorem ipsum dolor
+
+    .btn-group
 
