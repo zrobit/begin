@@ -1,0 +1,50 @@
+.form-login
+  // display block
+  width 300px
+  height 500px
+  margin 0 auto
+  box-sizing border-box
+  // background blue
+
+  label
+    display block
+    font-size 16px
+    padding 24px 0 8px
+    letter-spacing 1px
+    font-weight 100
+    color darken(#fff, 55)
+
+  input
+    display block
+    width 100%
+    height 50px
+    padding 5px 8px
+    box-sizing border-box
+    border 1px solid darken(#fff, 20)
+    color darken(#fff, 65)
+    font-size 16px
+    font-weight 100
+
+    &:focus
+      border-color darken(#fff, 45)
+      transition border-color .2s
+      outline none
+
+
+  input[type='text']
+    letter-spacing 2px
+
+  input[type='password']
+    letter-spacing 7px
+
+  button
+    display block
+    width 100%
+    height 50px
+    box-sizing border-box
+    margin-top 25px
+    background #2ecc71
+    border none
+    color #fff
+    font-size 18px
+    letter-spacing 6px
