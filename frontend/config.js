@@ -8,8 +8,8 @@ config.env = {
 
 //Page configuration
 config.page = {
-  title: 'post',
-  description: 'post',
+  title: 'begin',
+  description: 'begin',
   keywords: '',
   analytics_ua: 'UA-XXXXXXXX-XX',
   facebook: {

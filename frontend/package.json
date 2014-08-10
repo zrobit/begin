@@ -1,7 +1,7 @@
 {
-  "name": "post",
+  "name": "begin",
   "version": "0.0.0",
-  "description": "post",
+  "description": "begin",
   "repository": {
     "type": "git",
     "url": "https://github.com/zrobit/skel.git"

@@ -1,5 +1,5 @@
 """
-Django settings for post project.
+Django settings for begin project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -47,9 +47,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'post.urls'
+ROOT_URLCONF = 'begin.urls'
 
-WSGI_APPLICATION = 'post.wsgi.application'
+WSGI_APPLICATION = 'begin.wsgi.application'
 
 
 # Database
