@@ -1,0 +1,11 @@
+[
+  {
+    "model" : "posts.tag",
+    "pk" : 1,
+    "fields" : {
+      "date": "2014-06-15",
+      "name" : "meme",
+      "slug" : "meme"
+    }
+  }
+]
