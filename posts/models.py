@@ -20,7 +20,6 @@ class Tag(models.Model):
     name = models.CharField(max_length=32)
     slug = models.SlugField(unique=True, max_length=32, db_index=True)
     date = models.DateField(auto_now_add=True)
-    #num_pics = models.IntegerField(default=0)
     status_choices = (
         ('featured', 'Featured'),
         ('published', 'Published'),
@@ -38,11 +37,25 @@ class Tag(models.Model):
         return self.name
 
 
+class Author(models.Model):
+    name = models.CharField(max_length=32)
+    slug = models.SlugField(unique=True, max_length=32, db_index=True)
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.name)
+        super(Tag, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return self.name
+
+
 class Post (models.Model):
     title = models.CharField(max_length=128, blank=True, null=True)
     slug = models.SlugField(unique=True, max_length=32, db_index=True)
     date = models.DateField(blank=True, null=True)
     body = models.TextField(max_length=1024, blank=True, null=True)
+    author = models.ForeignKey(Author)
 
     STATUS_CHOICES = (
         ('featured', 'Featured'),
