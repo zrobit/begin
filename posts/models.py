@@ -5,7 +5,6 @@ from django.template.defaultfilters import slugify
 class Category(models.Model):
     name = models.CharField(max_length=32)
     slug = models.SlugField(unique=True, max_length=32, db_index=True)
-    date = models.DateField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -19,14 +18,6 @@ class Category(models.Model):
 class Tag(models.Model):
     name = models.CharField(max_length=32)
     slug = models.SlugField(unique=True, max_length=32, db_index=True)
-    date = models.DateField(auto_now_add=True)
-    status_choices = (
-        ('featured', 'Featured'),
-        ('published', 'Published'),
-        ('deleted', 'Deleted'),
-    )
-    status = models.CharField(
-        max_length=16, choices=status_choices, default='published')
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -69,7 +60,6 @@ class Post (models.Model):
         max_length=16, choices=STATUS_CHOICES, blank=True, null=True)
 
     views = models.IntegerField(blank=True, null=True)
-    # likes = models.IntegerField(blank=True, null=True)
     categories = models.ManyToManyField(Category, blank=True, null=True)
     tags = models.ManyToManyField(Tag, blank=True, null=True)
 
