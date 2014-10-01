@@ -65,9 +65,9 @@ class Post (models.Model):
 
     def save(self, *args, **kwargs):
         if not self.id:
-            self.slug = slugify(self.name)
+            self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
 
     def __unicode__(self):
-        return 'id: %d | hash: %s' % (self.id, self.hash)
+        return self.slug
 
