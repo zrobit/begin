@@ -35,7 +35,7 @@ class Author(models.Model):
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
-        super(Tag, self).save(*args, **kwargs)
+        super(Author, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
@@ -66,7 +66,7 @@ class Post (models.Model):
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
-        super(Category, self).save(*args, **kwargs)
+        super(Post, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return 'id: %d | hash: %s' % (self.id, self.hash)
