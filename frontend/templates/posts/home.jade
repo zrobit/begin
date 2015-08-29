@@ -1,15 +1,31 @@
 extends ../_layout
-  
+
+mixin dev_home_card
+  for i in new Array(24)
+    .cards-col
+      .card
+        img(src=static_url('images/content/1.png'))
+        .card-info
+          h2 Title this a large large title
+          p Lorem ipsum dolor
+
+mixin dep_home_card
+  {% for post in posts %}
+  .cards-col
+    .card
+      img(src=static_url('images/content/1.png'))
+      .card-info
+        h2 {{ post.title }}
+        p {{ post.body }}
+  {% endfor %}
+
 block content
   .home
     .cards
-      for i in new Array(24)
-        .cards-col
-          .card
-            img(src=static_url('images/content/1.png'))
-            .card-info
-              h2 Title this a large large title
-              p Lorem ipsum dolor
+      if env === 'dev'
+        +dev_home_card
+      else if env === 'deploy'
+        +dep_home_card
 
     .btn-group
       .btn-back-col
